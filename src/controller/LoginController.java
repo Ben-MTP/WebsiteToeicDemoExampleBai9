@@ -30,11 +30,15 @@ public class LoginController extends HttpServlet {
 		boolean kt = LoginDAO.Validate(name, pass);
 		if(kt) {
 			String msg1 = "Login Success";
-			request.setAttribute("message", msg1);
+			request.setAttribute("message1", msg1);
+			request.setAttribute("name", name);
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/View/LoginSuccess.jsp");
 			rd.forward(request, response);
 		} else {
-			System.out.println("Login False!");
+			String msg2 = "Login Failed";
+			request.setAttribute("message2", msg2);
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/View/Login.jsp");
+			rd.forward(request, response);
 		}
 	}
 }

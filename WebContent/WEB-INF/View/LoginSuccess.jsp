@@ -7,6 +7,7 @@
 <title>Login Success</title>
 </head>
 <body>
-	<h1><%=request.getAttribute("message")%></h1>
+	<h1><%=request.getAttribute("message1")%></h1>
+	<h2>Chao mung <%=request.getAttribute("name")%></h2>
 </body>
 </html>
